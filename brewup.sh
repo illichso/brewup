@@ -47,6 +47,7 @@ $lineBreak
 echo updating npm
 (set -x; npm -v;)
 (set -x; npm install npm@latest -g;)
+(set -x; npm -v;)
 $lineBreak
 echo updating pip
 (set -x; pip install --upgrade pip setuptools;)
