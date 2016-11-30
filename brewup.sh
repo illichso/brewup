@@ -18,7 +18,8 @@ underline=`tput smul`
 blink=`tput blink`
 reset=`tput sgr0`
 
-(set -x; cd $(brew --repo) &&  git fetch && git reset --hard origin/master;)
+echo updating from  https://github.com/Homebrew/brew.git
+(set -x; cd "$(brew --repo)" && git fetch && git reset --hard origin/master;)
 (set -x; brew update;)
 (set -x; brew cask update;)
 
@@ -44,10 +45,12 @@ done;
 $lineBreak
 (set -x; java -version;)
 $lineBreak
-echo updating npm
+echo updating npm version
 (set -x; npm -v;)
 (set -x; npm install npm@latest -g;)
 (set -x; npm -v;)
+echo updating npm dependencies and clearing npm cache
+(set -x; npm cache clean && npm update -g && npm cache clean;)
 $lineBreak
 echo updating pip
 (set -x; pip install --upgrade pip setuptools;)
