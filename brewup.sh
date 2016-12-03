@@ -27,7 +27,8 @@ echo updating from  https://github.com/Homebrew/brew.git
 
 (set -x; brew cleanup;)
 (set -x; brew cask cleanup;)
-
+(set -x; brew doctor;)
+(set -x; brew prune;)
 
 casks=( $(brew cask list) );
 $lineBreak
