@@ -48,7 +48,7 @@ $lineBreak
 $lineBreak
 echo updating npm version
 (set -x; npm -v;)
-(set -x; npm install npm@latest -g;)
+(set -x; npm install -s npm@latest -g;)
 (set -x; npm -v;)
 echo updating npm dependencies and clearing npm cache
 (set -x; npm cache clean && npm update -g && npm cache clean;)
