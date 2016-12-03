@@ -1,1 +1,1 @@
-# brewup
+# Brewup [![Build Status](https://api.travis-ci.org/illichso/brewup.svg?branch=master)](https://travis-ci.org/illichso/brewup)
