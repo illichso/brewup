@@ -1,0 +1,14 @@
+sudo: required
+
+matrix:
+  include:
+    - os: osx
+      env: OSX=10.12.1
+      osx_image: xcode8.1
+
+script:
+  - sh ./brewup.sh
+
+after_script:
+  - sh java -version
+  - sh node -v
