@@ -27,6 +27,7 @@ echo updating from  https://github.com/Homebrew/brew.git
 
 (set -x; brew cleanup;)
 (set -x; brew cask cleanup;)
+(set -x; brew prune;)
 (set -x; brew doctor;)
 (set -x; brew prune;)
 
@@ -47,11 +48,12 @@ $lineBreak
 (set -x; java -version;)
 $lineBreak
 echo updating npm version
+(set -x; node -v;)
 (set -x; npm -v;)
-(set -x; npm install -s npm@latest -g;)
-(set -x; npm -v;)
+(set -x; npm install -s npm@latest &>/dev/null;)
 echo updating npm dependencies and clearing npm cache
 (set -x; npm cache clean && npm update -g && npm cache clean;)
+(set -x; npm -v;)
 $lineBreak
 echo updating pip
 (set -x; pip install --upgrade pip setuptools;)
