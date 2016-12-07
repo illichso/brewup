@@ -18,7 +18,7 @@ underline=`tput smul`
 blink=`tput blink`
 reset=`tput sgr0`
 
-echo updating from  https://github.com/Homebrew/brew.git
+echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; cd "$(brew --repo)" && git fetch && git reset --hard origin/master;)
 (set -x; brew update;)
 (set -x; brew cask update;)
@@ -47,18 +47,20 @@ done;
 $lineBreak
 (set -x; java -version;)
 $lineBreak
-echo updating npm version
+echo "updating npm version"
 (set -x; node -v;)
 (set -x; npm -v;)
 (set -x; npm install -s npm@latest &>/dev/null;)
-echo updating npm dependencies and clearing npm cache
+echo "updating npm dependencies and clearing npm cache"
 (set -x; npm cache clean && npm update -g && npm cache clean;)
 (set -x; npm -v;)
+echo "updating ncu"
+(set -x; npm i -g npm-check-updates;)
 $lineBreak
-echo updating pip
+echo "updating pip"
 (set -x; pip install --upgrade pip setuptools;)
 $lineBreak
-echo symlinking pip python applications to /Applications.
+echo "symlinking pip python applications to /Applications."
 (set -x; brew linkapps python;)
 $lineBreak
 end=$(date +"%s");
