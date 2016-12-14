@@ -54,8 +54,6 @@ echo "updating npm version"
 echo "clearing npm cache"
 (set -x; npm cache clean;)
 (set -x; npm -v;)
-echo "updating ncu"
-(set -x; npm i -g npm-check-updates;)
 $lineBreak
 echo "updating pip"
 (set -x; pip install --upgrade pip setuptools;)
