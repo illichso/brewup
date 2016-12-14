@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 start=$(date +"%s")
 
 #variables
@@ -40,7 +40,7 @@ do
     if [[ $installed = *[!\ ]* ]]; then
     	echo "${red}${cask}${reset} requires ${red}update${reset}."
         (set -x; brew cask install $cask --force;)
-    else 
+    else
     	echo "${red}${cask}${reset} is ${green}up-to-date${reset}."
     fi
 done;
@@ -50,9 +50,9 @@ $lineBreak
 echo "updating npm version"
 (set -x; node -v;)
 (set -x; npm -v;)
-(set -x; npm install -s npm@latest &>/dev/null;)
-echo "updating npm dependencies and clearing npm cache"
-(set -x; npm cache clean && npm update -g && npm cache clean;)
+(set -x; npm install -sg npm@latest &>/dev/null;)
+echo "clearing npm cache"
+(set -x; npm cache clean;)
 (set -x; npm -v;)
 echo "updating ncu"
 (set -x; npm i -g npm-check-updates;)
@@ -64,7 +64,7 @@ echo "symlinking pip python applications to /Applications."
 (set -x; brew linkapps python;)
 $lineBreak
 end=$(date +"%s");
-echo ${underline}${blue}${bright}Total brewup time: ${bold}$((end-start)) seconds.${reset}
+echo "${underline}${blue}${bright}Total brewup time: ${bold}$((end-start)) seconds.${reset}"
 
 $bedinEndSmallLine
 $beginEndBigLine
