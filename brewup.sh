@@ -50,7 +50,10 @@ $lineBreak
 echo "updating npm version"
 (set -x; node -v;)
 (set -x; npm -v;)
-(set -x; npm install -sg npm@latest &>/dev/null;)
+echo "clearing npm cache"
+(set -x; npm cache clean;)
+echo "installing globally useful packages"
+(set -x; npm i -sg npm@latest &>/dev/null;)
 echo "clearing npm cache"
 (set -x; npm cache clean;)
 (set -x; npm -v;)
