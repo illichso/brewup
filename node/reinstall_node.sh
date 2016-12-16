@@ -21,13 +21,13 @@ chmod +x ./uninstall_node.sh ./install_node.sh;
 echo "Uninstall old node";
 
 $lineBreak
-sh ./uninstall_node.sh;
+./uninstall_node.sh;
 $lineBreak
 
 echo "Install new node";
 
 $lineBreak
-sh ./install_node.sh;
+./install_node.sh;
 $lineBreak
 
 end=$(date +"%s");
