@@ -30,5 +30,6 @@ $lineBreak
 sh ./install_node.sh;
 $lineBreak
 
+end=$(date +"%s");
 echo "${underline}${blue}${bright}Total node reinstall time: ${bold}$((end-start)) seconds.${reset}"
 $beginEndBigLine
