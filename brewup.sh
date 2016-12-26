@@ -30,20 +30,24 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; brew prune;)
 (set -x; brew doctor;)
 (set -x; brew prune;)
+(set -x; brew cu;)
 
 casks=( $(brew cask list) );
 $lineBreak
 for cask in ${casks[@]}
 do
-    installed="$(brew cask info $cask | grep 'Not installed')"
+    version=$(brew cask info $cask | sed -n "s/$cask:\ \(.*\)/\1/p")
+    installed=$(find "/usr/local/Caskroom/$cask" -type d -mindepth 1 -maxdepth 1 -name "$version")
 
-    if [[ $installed = *[!\ ]* ]]; then
-    	echo "${red}${cask}${reset} requires ${red}update${reset}."
+    if [[ -z $installed ]]; then
+        echo "${red}${cask}${reset} requires ${red}update${reset}."
+        (set -x; brew cask uninstall $cask --force;)
         (set -x; brew cask install $cask --force;)
     else
-    	echo "${red}${cask}${reset} is ${green}up-to-date${reset}."
+        echo "${red}${cask}${reset} is ${green}up-to-date${reset}."
     fi
 done;
+(set -x; brew cask cleanup;)
 $lineBreak
 (set -x; java -version;)
 $lineBreak
