@@ -21,7 +21,6 @@ reset=`tput sgr0`
 echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; cd "$(brew --repo)" && git fetch && git reset --hard origin/master;)
 (set -x; brew update;)
-(set -x; brew cask update;)
 
 (set -x; brew upgrade;)
 
