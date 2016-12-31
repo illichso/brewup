@@ -47,6 +47,7 @@ do
     fi
 done;
 $lineBreak
+(set -x; brew cask cleanup;)
 (set -x; java -version;)
 $lineBreak
 echo "updating npm version"
