@@ -29,8 +29,8 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; brew prune;)
 (set -x; brew doctor;)
 (set -x; brew prune;)
-(set -x; brew cu;)
-(set -x; brew cask cleanup;)
+#(set -x; brew cu;)
+#(set -x; brew cask cleanup;)
 $lineBreak
 casks=( $(brew cask list) );
 for cask in ${casks[@]}
@@ -64,8 +64,8 @@ $lineBreak
 echo "updating pip"
 (set -x; pip install --upgrade pip setuptools;)
 $lineBreak
-echo "symlinking pip python applications to /Applications."
-(set -x; brew linkapps python;)
+#echo "symlinking pip python applications to /Applications."
+#(set -x; brew linkapps python;)
 $lineBreak
 end=$(date +"%s");
 echo "${underline}${blue}${bright}Total brewup time: ${bold}$((end-start)) seconds.${reset}"
