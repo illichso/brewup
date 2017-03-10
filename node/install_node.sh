@@ -8,6 +8,7 @@ brew update;
 brew upgrade;
 brew cleanup;
 brew install node;
+brew install yarn;
 brew cleanup;
 
 echo "Show installed node version";
@@ -15,6 +16,9 @@ echo "Show installed node version";
 
 echo "Show npm default version";
 (set -x; npm -v;)
+
+echo "Show yarn default version";
+(set -x; yarn -v;)
 
 #(set -x; npm config ls;)
 

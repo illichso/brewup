@@ -3,6 +3,7 @@
 echo "Finding node before uninstalling by brew";
 node -v;
 npm -v;
+yarn -v;
 
 echo "Running brew uninstall --force node"
 brew uninstall --force nvm;
@@ -14,6 +15,7 @@ brew uninstall --force nodeenv;
 brew uninstall --force nave;
 brew uninstall --force llnode;
 brew uninstall --force node;
+brew uninstall --force yarn;
 echo "brew prune"
 brew prune;
 echo "brew doctor"
@@ -54,6 +56,8 @@ rm -rf /usr/local/share/man/man9/node*;
 rm -rf /usr/local/share/man/man9/npm*;
 rm -rf /usr/local/lib/dtrace/node.d;
 rm -rf ~/.npm;
+rm -rf ~/.yarnrc;
+rm -rf ~/.babel.json;
 rm -rf ~/.node*;
 rm -rf /opt/local/bin/node;
 rm -rf /opt/local/include/node;
@@ -69,3 +73,5 @@ echo "Trying node -v";
 node -v;
 echo "Trying npm -v";
 npm -v;
+echo "Trying yarn -v";
+yarn -v;
