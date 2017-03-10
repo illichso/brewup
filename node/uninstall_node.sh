@@ -12,8 +12,8 @@
 (set -x; brew uninstall --force nodeenv;)
 (set -x; brew uninstall --force nave;)
 (set -x; brew uninstall --force llnode;)
-(set -x; brew uninstall --force node;)
 (set -x; brew uninstall --force yarn;)
+(set -x; brew uninstall --force node;)
 
 (set -x; brew prune;)
 
