@@ -12,13 +12,26 @@
 (set -x; brew uninstall --force nodeenv;)
 (set -x; brew uninstall --force nave;)
 (set -x; brew uninstall --force llnode;)
+(set -x; brew uninstall --force leafnode;)
 (set -x; brew uninstall --force yarn;)
 (set -x; brew uninstall --force node;)
+(set -x; brew uninstall --force node@0.10;)
+(set -x; brew uninstall --force node@0.12;)
+(set -x; brew uninstall --force node@4;)
+(set -x; brew uninstall --force node@6;)
+
+(set -x; brew cask uninstall --force mindnode-pro;)
+(set -x; brew cask uninstall --force nodebox;)
+(set -x; brew cask uninstall --force printnode;)
+(set -x; brew cask uninstall --force node-profiler;)
+(set -x; brew cask uninstall --force nodeclipse;)
+(set -x; brew cask uninstall --force soundnode;)
+
+(set -x; brew cleanup;)
+(set -x; brew cask cleanup;)
 
 (set -x; brew prune;)
-
 (set -x; brew doctor &>/dev/null;)
-
 (set -x; brew prune;)
 
 
@@ -54,7 +67,9 @@
 (set -x; rm -rf /usr/local/share/man/man9/npm*;)
 (set -x; rm -rf /usr/local/lib/dtrace/node.d;)
 (set -x; rm -rf ~/.npm;)
+(set -x; rm -rf ~/.npmrc;)
 (set -x; rm -rf ~/.yarnrc;)
+(set -x; rm -rf ~/yarn.lock;)
 (set -x; rm -rf ~/.babel.json;)
 (set -x; rm -rf ~/node_modules/;)
 (set -x; rm -rf ~/.node*;)
