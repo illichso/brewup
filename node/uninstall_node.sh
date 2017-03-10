@@ -1,77 +1,75 @@
 #!/usr/bin/env sh
 
-echo "Finding node before uninstalling by brew";
-node -v;
-npm -v;
-yarn -v;
+(set -x; node -v;)
+(set -x; npm -v;)
+(set -x; yarn -v;)
 
-echo "Running brew uninstall --force node"
-brew uninstall --force nvm;
-brew uninstall --force n;
-brew uninstall --force nodebrew;
-brew uninstall --force node-build;
-brew uninstall --force nodenv;
-brew uninstall --force nodeenv;
-brew uninstall --force nave;
-brew uninstall --force llnode;
-brew uninstall --force node;
-brew uninstall --force yarn;
-echo "brew prune"
-brew prune;
-echo "brew doctor"
-brew doctor &>/dev/null;
-echo "brew prune"
-brew prune;
+(set -x; brew uninstall --force nvm;)
+(set -x; brew uninstall --force n;)
+(set -x; brew uninstall --force nodebrew;)
+(set -x; brew uninstall --force node-build;)
+(set -x; brew uninstall --force nodenv;)
+(set -x; brew uninstall --force nodeenv;)
+(set -x; brew uninstall --force nave;)
+(set -x; brew uninstall --force llnode;)
+(set -x; brew uninstall --force node;)
+(set -x; brew uninstall --force yarn;)
 
-echo "Finding node before manually deleting";
-node -v;
-npm -v;
+(set -x; brew prune;)
 
-echo "Removing previously installed nodejs"
-rm -rf /usr/local/lib/node*;
-rm -rf /usr/local/include/node*;
-rm -rf ~/local/node*;
-rm -rf ~/lib/node*;
-rm -rf ~/include/node*;
-rm -rf /usr/local/bin/node*;
-rm -rf /usr/local/bin/npm*;
-rm -rf /usr/local/lib/dtrace/node.d;
-rm -rf /usr/local/share/man/man1/node*;
-rm -rf /usr/local/share/man/man1/npm*;
-rm -rf /usr/local/share/man/man2/node*;
-rm -rf /usr/local/share/man/man2/npm*;
-rm -rf /usr/local/share/man/man3/node*;
-rm -rf /usr/local/share/man/man3/npm*;
-rm -rf /usr/local/share/man/man4/node*;
-rm -rf /usr/local/share/man/man4/npm*;
-rm -rf /usr/local/share/man/man5/node*;
-rm -rf /usr/local/share/man/man5/npm*;
-rm -rf /usr/local/share/man/man6/node*;
-rm -rf /usr/local/share/man/man6/npm*;
-rm -rf /usr/local/share/man/man7/node*;
-rm -rf /usr/local/share/man/man7/npm*;
-rm -rf /usr/local/share/man/man8/node*;
-rm -rf /usr/local/share/man/man8/npm*;
-rm -rf /usr/local/share/man/man9/node*;
-rm -rf /usr/local/share/man/man9/npm*;
-rm -rf /usr/local/lib/dtrace/node.d;
-rm -rf ~/.npm;
-rm -rf ~/.yarnrc;
-rm -rf ~/.babel.json;
-rm -rf ~/.node*;
-rm -rf /opt/local/bin/node;
-rm -rf /opt/local/include/node;
-rm -rf /opt/local/lib/node*;
-rm -rf /usr/bin/npm;
-rm -rf /usr/local/share/systemtap/tapset/node.stp;
-rm -rf /var/db/receipts/org.nodejs.*;
-rm -rf ~/.nvm;
-rm -rf /usr/local/Cellar/node;
+(set -x; brew doctor &>/dev/null;)
 
-echo "Finding node after manually deleting";
-echo "Trying node -v";
-node -v;
-echo "Trying npm -v";
-npm -v;
-echo "Trying yarn -v";
-yarn -v;
+(set -x; brew prune;)
+
+
+(set -x; node -v;)
+(set -x; npm -v;)
+
+
+(set -x; rm -rf /usr/local/lib/node*;)
+(set -x; rm -rf /usr/local/include/node*;)
+(set -x; rm -rf ~/local/node*;)
+(set -x; rm -rf ~/lib/node*;)
+(set -x; rm -rf ~/include/node*;)
+(set -x; rm -rf /usr/local/bin/node*;)
+(set -x; rm -rf /usr/local/bin/npm*;)
+(set -x; rm -rf /usr/local/lib/dtrace/node.d)
+(set -x; rm -rf /usr/local/share/man/man1/node*;)
+(set -x; rm -rf /usr/local/share/man/man1/npm*;)
+(set -x; rm -rf /usr/local/share/man/man2/node*;)
+(set -x; rm -rf /usr/local/share/man/man2/npm*;)
+(set -x; rm -rf /usr/local/share/man/man3/node*;)
+(set -x; rm -rf /usr/local/share/man/man3/npm*;)
+(set -x; rm -rf /usr/local/share/man/man4/node*;)
+(set -x; rm -rf /usr/local/share/man/man4/npm*;)
+(set -x; rm -rf /usr/local/share/man/man5/node*;)
+(set -x; rm -rf /usr/local/share/man/man5/npm*;)
+(set -x; rm -rf /usr/local/share/man/man6/node*;)
+(set -x; rm -rf /usr/local/share/man/man6/npm*;)
+(set -x; rm -rf /usr/local/share/man/man7/node*;)
+(set -x; rm -rf /usr/local/share/man/man7/npm*;)
+(set -x; rm -rf /usr/local/share/man/man8/node*;)
+(set -x; rm -rf /usr/local/share/man/man8/npm*;)
+(set -x; rm -rf /usr/local/share/man/man9/node*;)
+(set -x; rm -rf /usr/local/share/man/man9/npm*;)
+(set -x; rm -rf /usr/local/lib/dtrace/node.d;)
+(set -x; rm -rf ~/.npm;)
+(set -x; rm -rf ~/.yarnrc;)
+(set -x; rm -rf ~/.babel.json;)
+(set -x; rm -rf ~/node_modules/;)
+(set -x; rm -rf ~/.node*;)
+(set -x; rm -rf /opt/local/bin/node;)
+(set -x; rm -rf /opt/local/include/node;)
+(set -x; rm -rf /opt/local/lib/node*;)
+(set -x; rm -rf /usr/bin/npm;)
+(set -x; rm -rf /usr/local/share/systemtap/tapset/node.stp;)
+(set -x; rm -rf /var/db/receipts/org.nodejs.*;)
+(set -x; rm -rf ~/.nvm;)
+(set -x; rm -rf /usr/local/Cellar/node;)
+
+
+(set -x; node -v;)
+
+(set -x; npm -v;)
+
+(set -x; yarn -v;)
