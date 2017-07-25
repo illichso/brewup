@@ -62,7 +62,8 @@ $lineBreak
 #(set -x; npm -v;)
 #$lineBreak
 echo "updating pip"
-(set -x; pip install --upgrade pip setuptools;)
+(set -x; pip install --upgrade pip;)
+#(set -x; pip install --upgrade pip setuptools;)
 $lineBreak
 #echo "symlinking pip python applications to /Applications."
 #(set -x; brew linkapps python;)

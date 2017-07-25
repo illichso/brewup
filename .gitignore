@@ -1,3 +1,4 @@
 .bash_profile
-.vimrc
+#.vimrc
 /.idea/
+.DS_Store
