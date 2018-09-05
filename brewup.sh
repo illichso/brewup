@@ -24,12 +24,11 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 
 (set -x; brew upgrade;)
 
-(set -x; brew cleanup;)
-(set -x; brew prune;)
+(set -x; brew cu -ay;)
+
 (set -x; brew doctor;)
 (set -x; brew prune;)
-(set -x; brew cu -y;)
-(set -x; brew cask cleanup;)
+(set -x; brew cleanup;)
 
 #$lineBreak
 #casks=( $(brew cask list) );
