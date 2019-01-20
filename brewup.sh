@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 start=$(date +"%s")
 
 #variables
@@ -20,15 +20,18 @@ reset=`tput sgr0`
 
 echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; cd "$(brew --repo)" && git fetch && git reset --hard origin/master;)
+
+#(set -x; git -C "$(brew --repo homebrew/core)" fetch --unshallow;)
+#(set -x; cd $(brew --repo) && git fetch && git reset --hard origin/master && git pull origin master && cd -;)
+
+#(set -x; cd /usr/local/Homebrew/Library/Taps/buo/homebrew-cask-upgrade && git pull origin pull/114/head;)
+
 (set -x; brew update;)
 
 (set -x; brew upgrade;)
 
 (set -x; brew cu -ay;)
 
-(set -x; brew doctor;)
-(set -x; brew prune;)
-(set -x; brew cleanup;)
 
 #$lineBreak
 #casks=( $(brew cask list) );
@@ -46,7 +49,10 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 #    fi
 #done;
 #$lineBreak
-#(set -x; brew cask cleanup;)
+
+(set -x; brew cleanup;)
+(set -x; brew doctor;)
+#(set -x; brew prune;)
 
 #echo "updating npm version"
 #(set -x; node -v;)
