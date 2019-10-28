@@ -31,7 +31,7 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; brew upgrade;)
 
 (set -x; brew cu -ay;)
-
+(set -x; npm install -g appium;)
 
 #$lineBreak
 #casks=( $(brew cask list) );
@@ -51,7 +51,7 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 #$lineBreak
 
 (set -x; brew cleanup;)
-(set -x; brew doctor;)
+#(set -x; brew doct or;)
 #(set -x; brew prune;)
 
 #echo "updating npm version"
@@ -65,8 +65,8 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 #(set -x; npm cache clean;)
 #(set -x; npm -v;)
 #$lineBreak
-echo "updating pip"
-(set -x; pip install --upgrade pip;)
+#echo "updating pip"
+#(set -x; pip install --upgrade pip;)
 #(set -x; pip install --upgrade pip setuptools;)
 $lineBreak
 #echo "symlinking pip python applications to /Applications."
