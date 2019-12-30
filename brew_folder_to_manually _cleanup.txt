@@ -1,0 +1,3 @@
+Folder to clean up
+/Users/s/Library/Caches/Homebrew/downloads
+/Users/s/Library/Caches/Homebrew

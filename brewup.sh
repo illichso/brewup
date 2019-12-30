@@ -31,7 +31,6 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 (set -x; brew upgrade;)
 
 (set -x; brew cu -ay;)
-(set -x; npm install -g appium;)
 
 #$lineBreak
 #casks=( $(brew cask list) );
@@ -51,27 +50,22 @@ echo "updating from  https://github.com/Homebrew/brew.git"
 #$lineBreak
 
 (set -x; brew cleanup;)
-#(set -x; brew doct or;)
-#(set -x; brew prune;)
-
-#echo "updating npm version"
-#(set -x; node -v;)
-#(set -x; npm -v;)
-#echo "clearing npm cache"
-#(set -x; npm cache clean;)
-#echo "installing globally useful packages"
-#(set -x; npm i -sg npm@latest &>/dev/null;)
-#echo "clearing npm cache"
-#(set -x; npm cache clean;)
-#(set -x; npm -v;)
-#$lineBreak
-#echo "updating pip"
-#(set -x; pip install --upgrade pip;)
-#(set -x; pip install --upgrade pip setuptools;)
 $lineBreak
-#echo "symlinking pip python applications to /Applications."
-#(set -x; brew linkapps python;)
+echo "node js section"
+(set -x; brew reinstall node;)
+(set -x; node -v;)
+(set -x; npm -v;)
 $lineBreak
+echo "installing appium"
+(set -x; npm install -g appium;)
+$lineBreak
+echo "list of globally installed packages"
+(set -x; npm list -g --depth=0;)
+$lineBreak
+echo "updating globally useful packages"
+(set -x; npm i -sg npm@latest &>/dev/null;)
+$lineBreak
+date
 end=$(date +"%s");
 echo "${underline}${blue}${bright}Total brewup time: ${bold}$((end-start)) seconds.${reset}"
 
